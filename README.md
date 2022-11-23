@@ -1,0 +1,3 @@
+# Javascript Assignments
+
+## Small programs 🖥️
