@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Method</title>
+</head>
+
+<body>
+
+    <script>
+        document.write("<h3>Current time and date</h3>")
+        function date() {
+            let date = new Date();
+            document.write(date);
+            document.write("<br>");
+        }
+        date();
+
+        document.write("<h3>Greetings program</h3>")
+        function greetings() {
+            let firstName = prompt("Enter Your First Name");
+            let lastName = prompt("Enter Your Last Name");
+            document.write("Welcome to site"+ firstName +lastName);
+            document.write("<br>");
+        }
+        greetings();
+
+        document.write("<h3>Adds two number and sum the values</h3>")
+        function addedValue() {
+            sum1 = parseFloat(prompt("Enter first number to add"));
+            sum2 = parseFloat(prompt("Enter second number to add"));
+            const sum = sum1 + sum2;
+            document.write(`Added value of ${ sum1 } and ${ sum2 } is equals to ${ sum }`);
+            document.write("<br>")
+        }
+        addedValue();
+
+        document.write("<h3>Calculator takes three arguments return the desired value</h3>")
+        function calculator(num1, operator, num2) {
+            let result
+            if (operator == "+") {
+                result = (num1 + num2);
+            } else if (operator == "-") {
+                result = (num1 - num2);
+            } else if (operator == "/") {
+                result = (num1 / num2);
+            } else if (operator == "*") {
+                result = (num1 * num2);
+            } else if (operator == "%") {
+                result = (num1 % num2)
+            }
+            return result
+
+        }
+        document.write(calculator(20, "+", 10) + " Sum Value<br>");
+        document.write(calculator(20, "-", 10) + " Substracted Value<br>");
+        document.write(calculator(20, "/", 10) + " Division Value<br>");
+        document.write(calculator(20, "*", 10) + " Multiplication Value <br>");
+        document.write(calculator(12, "%", 6) + " Remainder Value <br><br>");
+
+        document.write("<h3>program that take start and end number as input and count through the range</h3>");
+        function startAndEnd() {
+            let start = parseInt(prompt("Enter Starting Number"));
+            let end = parseInt(prompt("Enter Ending Number"));
+            for (let i = start; i <= end; i++) {
+                document.write(" " + i);
+            }
+            document.write("<br>")
+        }
+        startAndEnd();
+
+        document.write("<h3>program to find a square of a value in a argument</h3>");
+        function square(square) {
+            return square * square;
+        }
+        document.write("the Square: " + square(2));//4
+        document.write("<br>")
+
+        document.write("<h3>program to find a factorial of a number</h3>");
+        function factorial() {
+            let input = parseInt(prompt("Enter a value to find factorial value of a number"));
+            let fact
+            if (fact = 1) {
+                for (let i = 1; i <= input; i++) {
+                    fact *= i;
+                }
+                document.write(`The factorial of ${ input } is ${ fact }`);
+            }
+            else if (input < 0) {
+                document.write("Negative value cant be a factorial value number");
+            }
+            else if (input === 0) {
+                document.write(`The factorial of ${ input } is 1`);//4X3X2X1 = 24 5X4X3X2X1= 120
+            }
+            document.write("<br>");
+        }
+        factorial();
+
+        document.write("<h3>Program to find hypotenuse with base and height</h3>");
+        function triangleHypotenuse(base, height) {
+            function square(side) {
+                return side * side; //square value 
+            }
+            return Math.sqrt(square(base) + square(height)); //A2 + B2 = C2
+
+        }
+        document.write("Hypotenuse of a right angle traingle is: " + triangleHypotenuse(3, 4) + "<br>");
+
+        document.write("<h3>Program to find dimension of rectangle with width and height</h3>");
+        function calculateHeightAndWidth(width, height) {
+            return width * height;      //D = Width height (100 * 200) = 20000
+        }
+        document.write("Width multiply by height Answer is: " + calculateHeightAndWidth(100, 200) + "<br>");
+
+        document.write("<h3>Program to recognize a string is palindrome word or not</h3>");
+        function palindrome(string) {
+            let regex = /[\W_]/g;
+            let lowerRegex = string.toLowerCase().replace(regex, '');
+
+            let reverseStr = lowerRegex.split('').reverse().join('');
+
+            return reverseStr === lowerRegex;
+
+        }
+        document.write(palindrome("abc") + "<br>");
+
+        document.write("<h3>Program to change the first letter of a string paragraph into title case</h3>");
+        function upperCase(str) {
+            let titleCase = str.toLowerCase().split(' ');
+            for (let i = 0; i < titleCase.length; i++) {
+                titleCase[i] = titleCase[i].charAt(0).toUpperCase() + titleCase[i].substring(1);
+            }
+            return titleCase.join(' ');
+        }
+        document.write(upperCase("the quick brown fox") + "<br>");
+
+        document.write("<h3>Program that accept a string as a parameter and find the longest word in a paragraph</h3>");
+        function findLongestWord(string) {
+            let str2 = string.split(' ');
+            return str2.sort((a, b) => b.length - a.length)[0];
+
+        }
+
+        document.write(findLongestWord("Web Development Tutorial") + "<br>")
+
+        document.write("<h3>Program that accept a string and a letter and function find the occurence of a letter in a string</h3>");
+        function findOccurenceOfAWord(string1, letter) {
+            let re = new RegExp(letter, 'gi');
+            let str3 = string1.match(re).length;
+            return str3;
+        }
+        document.write((findOccurenceOfAWord(`JSResourceS.com`, 'o')));
+
+        document.write("<h3>Program that calculate the property of a circle</h3>");
+        function calcCircumference(radius) {
+            return (2 * Math.PI * radius); //or we can use radius * radius * PI Circumference=2πr. area of circle=πr2
+
+        }
+        function calcArea() {
+            let area = calcCircumference(radius);
+            document.write("A circle with a " + radius + " centimeter radius. has an area of "
+                + area.toFixed(3) + " centimeters.<br> and diameter is " + radius * 2 + " centimeters");
+
+        }
+        let radius = parseFloat(prompt("Enter the radius of a circle"));
+        calcArea(radius);
+
+    </script>
+</body>
+
+</html>

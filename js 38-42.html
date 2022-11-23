@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function and while loops</title>
+</head>
+
+<body>
+
+    <script>
+
+        function powerOfANumber(a, b) {
+            document.write("<h3>Calculate A raised to B</h3>")
+            document.write(a + " is the value of A <br>")
+            document.write(b + " is the value of B<br>")
+            return document.write("A raised to B is " + a ** b)
+
+        }
+        powerOfANumber(2, 3)
+        
+        document.write("<br>")
+        function leapYear(year) {
+            document.write("<h3>Enter input to find the leap year</h3>")
+            if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))
+                document.write(year + " is a leap year.");
+            else {
+                document.write(year + " is not a leap year.");
+            }
+        }
+        let year = prompt("Enter leap year");
+
+        leapYear(year)
+        document.write("<br>")
+        function sideOfTriangle(side1, side2, side3) {
+            document.write("<h3>find the area of a triangle by heron's formula</h3><br>")
+            side1 = parseInt(prompt("Enter side 1 of a triangle"));
+            side2 = parseInt(prompt("Enter side 2 of a triangle"));
+            side3 = parseInt(prompt("Enter side 3 of a triangle"));
+
+            let s = (side1 + side2 + side3) / 2 // heron formula s = side1 + side2 + side3 / 2 = semi perimeter
+            document.write("Sides of triangle" + "<br>side a " + side1 + "<br>side b " + side2 + "<br>side c " + side3 + "<br> Semi perimeter of a,b,c is " + s + "<br>")
+            function AreaOfTriangle() {
+                let a = s
+                let area = (a * (s - side1) * (s - side2) * (s - side3)) //without square root value
+                let squareOfArea = Math.sqrt(area) // with square root value
+                document.write("Area of a triangle " + area.toFixed() + "<br>") // semi perimeter - side1 same goes to side2, and side3 after that * remaining side value should be multiply by semi perimeter
+                document.write("Square Of Area is " + squareOfArea.toFixed(3) + "<br>")
+            }
+            AreaOfTriangle()
+        }
+        sideOfTriangle();
+
+        function mainFunction() {
+            document.write("<h3>Calculate Average And Percentage By Given Obtained Marks</h3><br>");
+            let totalMarks = 275
+            document.write("Total Marks: " + totalMarks + "<br>")
+            let obtainedMarks1 = parseInt(prompt("Enter Obtained Marks In Three Subject out of 285"));
+            document.write("Obtained Marks: " + obtainedMarks1 + "<br>")
+            function averageMarks() {
+                let average = obtainedMarks1 / 3
+                document.write("Average marks: " + average.toFixed(2) + "<br>")
+            }
+            averageMarks()
+            function Percentage(average) {
+                let percent = (obtainedMarks1 / totalMarks) * 100
+                document.write("Percentage: " + percent.toFixed(2) + "%" + "<br>")
+            }
+            Percentage()
+        }
+        mainFunction()
+
+        function indexOf(word, character) {
+            document.write("<h3>function which is replica of IndexOf</h3><br>")
+            document.write("black ", " b charcter" + " return index of the first character in an argument otherwise return -1<br>")
+            for (let i = 0; i < word.length; i++) {
+                if (word[i] === character)
+                    return i
+            }
+            return -1
+        }
+        document.write(indexOf("black", "b"));
+        document.write("<br>")
+        // function replaceAllVowels(sentence) {
+        //     let al = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+        //     let result = "";
+
+        //     for (let i = 0; i < sentence.length; i++) {
+        //         if (!al.includes(sentence[i])) {
+        //         } result += sentence[i]
+        //     }
+        //     return result
+        // }
+        // let sentence = "this is a program that replace all of the vowels from a sentence";
+        // document.write(replaceAllVowels())
+
+        document.write("<h3>Program to remove all the vowels from a string</h3><br>")
+        function replaceAllVowels() {
+            let sentence = "this is a program to remove vowels from a string";
+            document.write("Before Replace:  " + sentence + "<br>")
+            let replace = sentence.replace(/[aeiou]/gi, '');
+            document.write("After Replace: " + replace + "<br>")
+        }
+        replaceAllVowels()
+
+        function findOccurenceOfAVowels() {
+            document.write("<h3>Find the count the number of vowels of any two vowels in succession</h3><br>")
+            let str = "Pleases read this application and give me gratuity"
+            document.write("String: " + str + "<br>")
+            let count = 0;
+            let seenVowel = false;
+
+            for (let letter of str.toLowerCase()) {
+                switch (letter) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        if (seenVowel) {
+                            count++;
+                            seenVowel = false
+                        } else { seenVowel = true }
+                        break;
+                    default: seenVowel = false
+                }
+            }
+            return count
+        }
+        document.write("vowels count in a succession manner ea,ea,io,ui is: " + findOccurenceOfAVowels() + "<br>");
+
+        function inputKM() {
+            document.write("<h3>Enter distance between two cities in KM</h3><br>")
+            let km = parseInt(prompt("Enter a Distance between two cities in KM"));
+            document.write("KiloMeter: " + km + "KM<br>")
+            function kmToMeter() {
+                let meter = km * 1000
+                document.write("KM To Meter: " + meter + "Meter<br>")
+            }
+            function kmToFeet() {
+                let feet = km * 3281
+                document.write("KM To Feet: " + feet + "Feet<br>")
+            }
+            function kmToInches() {
+                let inches = km * 39370
+                document.write("KM To Inches: " + inches + "Inches<br>")
+            }
+            function kmToCentiMeter() {
+                let centimeter = km * 100000
+                document.write("KM To CentiMeter: " + centimeter + "<br>")
+            }
+            kmToMeter()
+            kmToFeet()
+            kmToInches()
+            kmToCentiMeter()
+
+        }
+        inputKM()
+
+        function overTimeCal() {
+            document.write("<h3>Over time calculator (result is given in alert)</h3><br>")
+            let enterHour = parseInt(prompt("Enter your hours on work"));
+            let overtime = 12
+            if (enterHour <= 40) {
+                let normalSalary = enterHour * 10
+                alert(`Employee worked ${enterHour} hours, there's no overtime of work. Weekly salary is ${normalSalary}$`)
+            } else if (enterHour > 40) {
+                let remainHour = (enterHour - 40) * overtime
+                alert(`Employee worked ${enterHour} hours, Overtime of employee is based on above 40 hours of work is ${remainHour}$. total weekly salary is ${remainHour + 400}$.`)
+            }
+        }
+        overTimeCal()
+
+        document.write("<br>")
+        document.write("<h3>Currency Counter</h3>")
+        function countCurrency(amount) {
+
+            let notes = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
+            let noteCounter = Array(9).fill(0);
+
+            for (let i = 0; i < 9; i++) {
+                if (amount >= notes[i]) {
+                    noteCounter[i] = Math.floor(amount / notes[i]);
+                    amount = amount % notes[i];
+                }
+            }
+            for (let i = 0; i < 9; i++) {
+                if (noteCounter[i] != 0) {
+                    document.write(notes[i] + " notes are "
+                        + noteCounter[i] + "</br>");
+                }
+            }
+        }
+
+        let amount = parseInt(prompt("Enter amount to withdraw"))
+        document.write("Total cash withdrawn is " + amount + "<br>")
+        countCurrency(amount)
+
+    </script>
+</body>
+
+</html>

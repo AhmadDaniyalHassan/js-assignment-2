@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <a href="#" onclick="function1(this)">click on a link</a>
+    <br>
+    <br>
+    <br>
+    <img src="https://www.whatmobile.com.pk/admin/images/Samsung/GalaxyS8bbb.jpg" height="150px"
+        onclick="function2(this)">&nbsp;&nbsp;&nbsp;
+    <img src="https://www.whatmobile.com.pk/admin/images/Apple/AppleiPhoneX-b.jpg" height="150" onclick="function2()">
+    &nbsp;&nbsp;&nbsp;
+    <img src="https://www.whatmobile.com.pk/admin/images/Sony/SonyXperiaXZ1-b.jpg" height="150" onclick="function2()">
+    &nbsp;&nbsp;&nbsp;
+    <img src="https://www.whatmobile.com.pk/admin/images/BlackBerry/q10b.jpg" height="150" onclick="function2()">
+    <br>
+    <hr>
+    <table id="myTable">
+        <tbody>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Jhone</td>
+                <td>10</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Doe</td>
+                <td>9</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mark</td>
+                <td>10</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Johnny Depp</td>
+                <td>8</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Chloe Moretz</td>
+                <td>7</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dr. Dre</td>
+                <td>10</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Lil Wayne</td>
+                <td>10</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Eminem</td>
+                <td>10</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Tove lo</td>
+                <td>7</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Selena</td>
+                <td>6</td>
+                <td><button onclick="removeRow(this)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <img id="img1"
+        src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-after/Landscape-BW.jpg"
+        height="300px" width="300px" onmouseover="function3()" onmouseleave="function4()">
+    <br>
+    <hr>
+    <button onclick="function5(this)">↑</button>
+    <p>Clicks: <a id="clicks">0</a></p>
+    <button onclick="function6(this)" ;>↓</button>
+    <script>
+        //excercise 1
+        function function1(x) {
+            alert("You Clicked")
+        }
+        //excercise 2
+        function function2(z) {
+            alert("thank you for purchasing")
+        }
+        //excercise 3
+        function removeRow(a) {
+            let i = a.parentNode.parentNode.rowIndex;
+            document.getElementById('myTable').deleteRow(i)
+
+        }
+        //excercise 4
+        function function3() {
+            document.getElementById('img1').src = `https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg`
+
+        }
+        //excercise 4
+        function function4() {
+            document.getElementById('img1').src = `https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-after/Landscape-BW.jpg`
+
+        }
+        //excercise 5
+        let clicks = 0;
+        function function5() {
+            clicks++
+            document.getElementById('clicks').innerHTML = clicks;
+        }
+        //excercise 5
+        function function6() {
+            clicks--
+            document.getElementById('clicks').innerHTML = clicks;
+            if (clicks < 0) {
+                clicks = null
+            }
+        }
+    </script>
+</body>
+
+</html>

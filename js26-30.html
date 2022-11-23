@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Methods</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // Write a program that takes a positive integer and return number round off value floor ceil.
+        document.write("<h2>Program that takes positive integer</h2><br>");
+        function TakePostiveInterger() {
+            let prmt = parseFloat(prompt("Enter A Positive integers."));
+            if (prmt >= 1) {
+                document.write("Number:" + prmt + "<br>" + "Round off value: " + Math.round(prmt) + "<br>" +
+                    "Floor Value: " + Math.floor(prmt) + "<br>" + "Ceil Value: " + Math.ceil(prmt) + "<br>")
+            } else if (prmt <= 0) {
+                alert(prmt + " Is Not A Positive Number")
+            }
+            document.write("<br>")
+        }
+        TakePostiveInterger();
+
+        document.write("<h2>Program that takes negative floating point number</h2><br>")
+        //Write a program that takes negative number and return round off value floor ceil.
+        function TakeNegativeNumber() {
+            let prmt = parseFloat(prompt("Enter A Negative floating point number."));
+            if (prmt <= 0) {
+                document.write("Number:" + prmt + "<br>" + "Round off value: " + Math.round(prmt) + "<br>" +
+                    "Floor Value: " + Math.floor(prmt) + "<br>" + "Ceil Value: " + Math.ceil(prmt) + "<br>");
+            } else if (prmt >= 0) {
+                alert(prmt + " Is Not A Negative Number");
+            }
+            document.write("<br>");
+        }
+        TakeNegativeNumber();
+
+        document.write("<h2>Program that display absolute value of a number</h2><br>")
+        //Write a program that display the absolute value of a number.
+        function absValue() {
+            let absValue = parseFloat(prompt("Enter A Value To Find A Absolute Value"));
+            document.write("Input Value: " + absValue + "<br>");
+            document.write("Absolute Value: " + Math.abs(absValue));
+            document.write("<br>");
+            document.write("<br>");
+        }
+        absValue();
+
+        document.write("<h2>program that simulates a random dice value</h2><br>")
+        //Write a program that simulates a random dice value.
+        function randomDiceValue() {
+            let randomDice = Math.random();
+            let randomDice3 = Math.random();
+            let randomDice1 = randomDice * 7;
+            let randomDice2 = randomDice3 * 6 + 1;
+            let Dice = Math.floor(randomDice1);
+            let Dice1 = Math.floor(randomDice2);
+            document.write("Random Dice Value: " + Dice + "<br>");
+            document.write("Random Dice Value: " + Dice1 + "<br>");
+        }
+        randomDiceValue();
+
+        document.write("<h2>program that toss between head and tails 1 and 2</h2><br>")
+        //Write a program that toss between head and tails randomly with math.random.
+        function randomTossValue() {
+            let Heads = "Heads";
+            let Tails = "Tails";
+            let toss = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+            if (toss === 2) {
+                document.write(toss + "<br>" + "Random Coin Value " + Heads + ":<br>");
+            } else if (toss === 1) {
+                document.write(toss + "<br>" + "Random Coin Value " + Tails + ":<br>");
+            }
+            document.write("<br>")
+        }
+        randomTossValue();
+
+        document.write("<h2>program that shows a random number between 1 to 100</h2><br>")
+        //Write a program that shows a random number between 1 and 100.
+        function randomNumInARange(max, min) {
+            let randomNumInRange = Math.floor(Math.random() * (max - min + 1) + min);
+            document.write(`Random Value between ${min} and ${max} is ${randomNumInRange}`);
+            document.write("<br>");
+        }
+        randomNumInARange(100, 1);
+
+        document.write("<h2>program that takes the weight of a user tell their weight</h2><br>")
+        //write a program that takes the weight of a user and tell their weight
+        function weightTeller() {
+            let prmt2 = prompt("Enter Your Weight in kilogram");
+            let parse = parseFloat(prmt2);
+            document.write(`The weight of user is ${parse} Kilogram`);
+            document.write("<br>")
+        }
+        weightTeller();
+        
+        document.write("<h2>program that takes input between 1 to 10 program is in alert box</h2><br>")
+        //Write a program that take input between 1 to 10 and guess the secret number 
+        function randomNumGame(max, min) {
+            let inputUser = prompt("Enter A Number Between 1 To 10 And Guess The Right Secret Number");
+            let randomNumForGame = Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(randomNumForGame);
+            if (inputUser === randomNumForGame) {
+                alert("Congratulation " + " Secret Number Is " + randomNumForGame)
+            } else { alert("Please Try Again You Entered " + inputUser + ": Secret Number Is " + randomNumForGame) }
+        }
+        randomNumGame(10, 1);
+
+
+
+    </script>
+</body>
+
+</html>

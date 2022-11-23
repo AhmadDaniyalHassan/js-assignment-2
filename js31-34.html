@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date methods</title>
+</head>
+
+<body>
+
+
+    <script>
+        //write a program that display current date and time
+        document.write("<h2>Initalize the current date and time</h2>")
+        let d = new Date();
+        document.write(d);
+        document.write("<br>");
+
+        //Write a program that alert the current month.
+        const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        alert("Current Month : " + month[d.getMonth()]);
+        document.write("<br>");
+
+        //Write a program that alert the first three letter of the current day
+        const day = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat",];
+        alert("Today is : " + day[d.getDay()]);
+        document.write("<br>");
+
+        //write a program that says its funday if its saturday or sunday
+        document.write("<h2>Program that says its fun day if its Saturday & Sunday</h2>")
+        const day1 = ["It's Fun Day", "Mon", "Tue", "Wed", "Thur", "Fri", "It's Fun Day",];
+        let curDate = new Date();
+        document.write(day1[curDate.getDay()]);
+        document.write("<br>");
+
+        //Write a program that shows first fifteen days of the month and last days of the month
+        document.write("<h2>First fifteen and last days of the month</h2>")
+        function LastAndStart() {
+            let date = d.getDate();
+            if (date <= 15) {
+                document.write("First Fifteen days of the month");
+            } else if (date >= 16) {
+                document.write("Last days of the month")
+            }
+            document.write("<br>")
+        }
+        LastAndStart();
+
+        // Write a program that determined the minutes since midnight jan 1970.
+        document.write("<h2>Elapsed millisecond since midnight jan 1970 and find minutes that passed</h2>")
+        let currDate = new Date();
+        let milSecond = d.getTime();
+        document.write("Current Date And Time: " + currDate + "<br>");
+        document.write("Elapsed Millisecond Since Midnight, Jan, 1, 1970: " + milSecond + "<br>");
+        document.write("Elapsed Minutes Since Midnight, Jan, 1, 1970: " + milSecond / 1000 / 60 / 60 + "<br>");
+
+        // Write a program that tells whether its AM or PM
+        document.write("<h2>program that tells whether its AM Or PM</h2><br>")
+        let currD = new Date();
+        let hours = currD.getHours();
+        let minutes = currD.getMinutes();
+        let res = hours >= 12 ? "Its PM: " + hours + ": " + minutes : "Its AM: " + hours + ":" + minutes;
+        document.write(res);
+        document.write("<br>");
+        document.write("<br>");
+
+        //Write a program creates a date object for the last day last month for 2020 laterDate
+        document.write("<h2>Program that create a date object for the last days last month of 2020</h2><br>")
+        let laterDate = new Date("Thu, Dec 31, 2020");
+        document.write(laterDate);
+        document.write("<br>");
+        document.write("<br>");
+
+        //Write a program that shows how many days have passed since 1st ramadan
+        document.write("<h2>How many days have passed since 1st ramadan june 18 2015</h2>");
+        let start = new Date("june 18, 2015");
+        let end = new Date();
+        let diff = 0;
+        let days = 1000 * 60 * 60 * 24;
+        diff = end - start;
+        document.write(Math.floor(diff / days) + " days have passed since 1st Ramadan, 2015");
+        document.write("<br>");
+        document.write("<br>");
+
+        //Write a program that display seconds which is elapsed between the reference date
+        document.write("<h2>How many seconds elapsed between the reference date</h2>");
+        let refDate = new Date("Sat, December 05, 2015, 22:50:16");
+        document.write("On Reference Date: " + refDate + "<br>");
+        let customDate = new Date("Thu, Jan 01, 2015, 00:00:00");
+        console.log(customDate);
+        let difference = refDate - customDate;
+        let second = 1000 * 60;
+        document.write(Math.ceil(difference / second) + " Seconds had passed since beginning of 2015");
+        document.write("<br>");
+        document.write("<br>");
+
+        //Write a program that extract the hours and reset the object date hour ahead
+        document.write("<h2>Extract a hour from current date</h2><br>")
+        let currentDate = new Date();
+        document.write("Current Date:" + currentDate + "<br>");
+        currentDate.setHours(17);
+        document.write("1 hour ago, it was " + currentDate);
+        document.write("<br>");
+
+        //write a program that shows a 100 years ago from the current time
+        document.write("<h2>Change the year of a current date to 100 years back</h2><br>");
+        let newCurrentTime = new Date();
+        document.write("Current date and time: " + newCurrentTime + "<br>")
+        newCurrentTime.setFullYear(1922);
+        document.write("100 years back, it was: " + newCurrentTime + "<br>")
+        document.write("<br>")
+
+        //write a program to caluclate year of birth with given age
+        document.write("<h2>Enter your age to find the year of birth</h2><br>")
+        let EnterAge = prompt("Enter your current age");
+        document.write("Your age is: " + EnterAge + "<br>");
+        let currentTimes = new Date();
+        let ageSub = Math.abs(currentTimes.getFullYear() - EnterAge)
+        document.write("Your Birth Year is: " + ageSub)
+        document.write("<br>")
+
+        //Write a proogram to generate your electric bill
+        document.write("<h3>Calculate Your Electric Bill</h3><br>");
+        document.write("<h2>K-Electric Bill</h2><br>")
+        let dateAndMonth = new Date();
+        let dueDate = dateAndMonth.getDate();
+        let customerName = "ABC Customer";
+        let BillOfMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let numberOfUnits = 410;
+        let chargesPerUnit = 16;
+        let surCharges = 350;
+        let netAmount = numberOfUnits * chargesPerUnit
+        document.write("Customer Name: " + customerName + "<br>");
+        document.write("Billing Month: " + BillOfMonth[dateAndMonth.getMonth()] + "<br>");
+        document.write("Number Of Units: " + numberOfUnits + "<br>");
+        document.write("Charges Per Unit: " + chargesPerUnit + "<br>");
+        document.write("<br>");
+
+        if (dueDate < 15) {
+            document.write("Net Amount Payable (Within Due date) " + "RS: " + numberOfUnits * chargesPerUnit);
+        } else if (dueDate > 15) {
+            document.write("Gross Amount Payable (Afte Due Date) " + "RS: " + Math.abs(surCharges + netAmount));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings methods</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        ///////////assigning two variable into one and making dynamic///////////
+        document.write("<h3>Greetings with assign two variable into one</h3>");
+
+        var firstNames = prompt("Enter First Name.");
+        var lastNames = prompt("Enter Last Name.");
+        var fullNames = firstNames + " " + lastNames;
+        document.write(`welcome to site ${fullNames}`);
+
+        ///////////////finding length of a paragraph in a form of index////////////////
+        document.write("<h3>Enter Mobile name</h3>");
+
+        var mobile = prompt("Enter your favorite mobile device name");
+        var favMobile = (`My Favorite phone is: ${mobile}<br>`);
+        document.write(favMobile);
+        document.write(`Length of string: ${mobile.length}`);
+
+        //////////finding string index of a single word////////////// 
+        document.write("<br>");
+        document.write("<h3>Find string index</h3>");
+
+        var str = "Pakistani";
+        document.write("String: " + str + "<br>");
+        document.write("index of 'n': " + str.indexOf("n"));
+
+        ////////////finding last index of a string
+        document.write("<br>");
+        document.write("<h3>Find last index of a string</h3>");
+
+        var str1 = "Hello World";
+        document.write("String: " + str1 + "<br>");
+        document.write("Last index of 'l': " + str1.lastIndexOf("l"));
+
+        //////////////finding character by charAt method give index to find character////////////////
+        document.write("<br>");
+        document.write("<h3>Finding the character in a string by giving index</h3>");
+
+        var str2 = "Pakistani";
+        document.write("String: " + str2 + "<br>");
+        document.write("Character at index 3: " + str2.charAt(3));
+
+        ////////////string concat method//////////////
+        document.write("<br>");
+        document.write("<h3>Greetings with concat method</h3>");
+
+        var firstNames1 = prompt("Enter Your First Name");
+        var lastNames1 = prompt("Enter Your Last Name");
+        var fullNames1 = firstNames1.concat(lastNames1);
+        document.write("Welcome to site " + fullNames1);
+
+        //////////replacing string text////////////////
+        document.write("<br>");
+        document.write("<h3>Replacing string text</h3>");
+
+        var cityName = "Hyderabad";
+        var cityReplace = cityName.replace("Hyder", "Islam");
+        document.write("City: " + cityName + "<br>");
+        document.write("After replace: " + cityReplace);
+
+        //////////////replacing repeated words from a paragraph//////////////
+        document.write("<br>");
+        document.write("<h3>Replacing paragraph specific words</h3>");
+
+        var message = "Ali and Sami are best friends.They play cricket and football together.<br>";
+        document.write("Before: " + message + "<br>");
+        var messageReplace = message.replace(/and/g, "&");
+        document.write("After: " + messageReplace);
+
+        ////////////////replacing string into number////////////
+        document.write("<br>");
+        document.write("<h3>String into number</h3>");
+
+        var strNum = "472";
+        document.write("Value: " + strNum + "<br>")
+        document.write("Type: " + typeof strNum + "<br>")
+        var num = +strNum
+        document.write("Value:" + num + "<br>")
+        document.write("Type: " + typeof num + "<br>")
+
+        ///////////////change text to lower to upper case////////////////
+        document.write("<br>");
+        document.write("<h3>Change text to Lower to Upper case</h3>");
+
+        var lowToUpper = prompt("Enter text to convert into Upper Case");
+        document.write("LowerCase: " + lowToUpper + "<br>")
+
+        var upperCase = lowToUpper.toUpperCase();
+        document.write("UpperCase: " + upperCase);
+
+        ////////////////change text to title case////////////
+        document.write("<br>");
+        document.write("<h3>Change text to title case</h3>");
+
+        let userInput = prompt("Enter a text to change into title case");
+        document.write("Before: " + userInput + "<br>");
+        let newUserInput = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+        document.write("After: " + newUserInput);
+
+        //////////////convert number into string/////////////////
+        document.write("<br>");
+        document.write("<h3>Convert number into string.</h3>");
+
+        var numToStr = 35.36;
+        document.write("Before: " + numToStr + " <br> Type " + typeof numToStr + "<br>");
+        document.write("<br>");
+        var fValue = numToStr.toString().replace(".", "");
+        document.write("After: " + fValue + " <br> Type " + typeof fValue);
+
+        //////Enter A Valid username function////////////
+        function userNameValidation() {
+            var userName = prompt("Enter A Username")
+            var regularExpression = "^[0-9A-Za-z][A-Za-z0-9_]{8,16}$";
+            if (userName.match(regularExpression)) {
+                alert("Valid Username");
+            } else { alert(" You Entered A Invalid Username") };
+        }
+        userNameValidation();
+
+
+        //////////finding bakery item in whichever way you enter data if it is in an array they will give you output/////
+        function findBakeryItems() {
+            let shopItemSearch = prompt("Welcome to ABC bakery, What do you want to order sir/ma'am?");
+            let shopItems = ["cake", "apple pie", "cookie", "chips", "patties", "cheese puff"]
+            if (shopItems.indexOf(shopItemSearch.toLowerCase()) !== -1) {
+                alert(shopItemSearch + " This Item Is Available");
+            } else { alert(shopItemSearch + " This Item Is Not Available") };
+        }
+        findBakeryItems();
+
+
+        ////////////////convert string into an array by split method//////////////
+        document.write("<br>")
+        document.write("<h3>Convert string to an array using split method</h3>");
+
+        var str3 = "University of Karachi";
+        document.write(`Before: ${str3} <br>`);
+        var strSplit = str3.split(``);
+        document.write("After: " + strSplit + "<br>");
+        // console.log(strSplit)
+
+        ////////// find last word of user input name//////////////
+        document.write("<br>")
+        document.write("<h3>Find last word of any given word</h3>");
+
+
+        let str4 = prompt("Enter Any word to find last character of a word.");
+        document.write("Entered Keyword: " + str4 + "<br>")
+        let resStr = str4.charAt(str4.length - 1);
+        document.write("Result Keyword: " + resStr)
+
+
+        //// find same word in a string using match method and regular expression/////
+        document.write("<br>")
+        document.write("<h3>find occurrences 'the' in a sentence of a string.</h3>");
+
+        let sentence = "The quick brown fox jumps over the lazy dog.";
+        document.write("Before: " + sentence + "<br>");
+        var count = sentence.match(/the/gi).length;
+        document.write("After: " + count);
+
+
+        //// Write a program to take password as an input ////
+        function passwordValidator() {
+            let pass = prompt("Enter A Password");
+            let regex = "^[A-Za-z][A-Za-z0-9]{6,}\d$";
+            if (pass.match(regex)) {
+                alert("You Entered Correct Password");
+            } else {
+                alert("You Entered Incorrect Password");
+            }
+        }
+        passwordValidator();
+
+
+        /////////////////practice////////////////
+        // const cal1 = parseFloat(prompt("Enter First Calculation Value."));
+        // const values = prompt("Enter Operator + - * / %");
+        // const cal2 = parseFloat(prompt("Enter Second Calculation Value."))
+        // let z
+        // if (values == "-") {
+        //     z = cal1 - cal2;
+        // } else if (values == "+") {
+        //     z = cal1 + cal2;
+        // } else if (values == "/") {
+        //     z = cal1 / cal2;
+        // } else if (values == "*") {
+        //     z = cal1 * cal2;
+        // } else if (values == "%") {
+        //     z = cal1 % cal2;
+        // }
+        // alert("Result: " + cal1 + " " + values + " " + cal2 + " = " + z);
+
+
+    </script>
+</body>
+
+</html>
