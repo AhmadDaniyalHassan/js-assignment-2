@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & loop</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        var emptyMultiArray = [[]];
+        document.write(`<h3>Multi-Dimensional Arrays</h3>`)
+        var initMultiArray =
+            [
+                [0, 1, 2, 3],
+                [1, 0, 1, 2],
+                [2, 1, 0, 1]
+            ];
+        document.write(`${initMultiArray[0]} <br> ${initMultiArray[1]} <br> ${initMultiArray[2]}<br><br>`)
+
+        document.write(`<h3>Numeric Counting</h3>`)
+        for (var i = 0; i <= 10; i++) {
+            document.write(`${i}<br>`)
+        }
+
+        document.write(`<h3>Multiplication table</h3> <br>`)
+        var table = parseInt(prompt("Enter a number to show its multiplication table"));
+        var tableLength = parseInt(prompt("Enter the length multiplication table"));
+
+        for (var i = 1; i <= tableLength; i++) {
+            const result = i * table;
+            document.write(`${table} * ${i} = ${result}<br>`)
+        }
+        document.write(`<h3>Print elements from array with for loop</h3> <br>`)
+
+        var fruits = ["Apple", "banana", "Mango", "Orange", "Peach", "Lemon"]
+
+        for (var i = 0; i < fruits.length; i++) {
+            document.write(`${fruits[i]}<br>`)
+        }
+        document.write(`<h3>Counting, Reverse Counting, Even, Odd, Series.</h3>`)
+
+        document.write("<h4>Counting</h4><br>")
+        for (var i = 1; i <= 15; i++) {
+            document.write(` ${i} &nbsp`)
+        }
+        document.write("<h4>Reverse Counting</h4><br>")
+        for (var i = 10; i >= 1; i--) {
+            document.write(` ${i} &nbsp`)
+        }
+        document.write("<h4>Even</h4><br>")
+        for (var i = 0; i <= 20; i += 2) {
+            document.write(` ${i} &nbsp`)
+        }
+        document.write("<h4>Odd</h4><br>")
+        for (var i = 1; i <= 20; i += 2) {
+            document.write(` ${i} &nbsp`)
+        }
+        document.write("<h4>Series</h4><br>")
+        for (var i = 2; i <= 20; i += 2) {
+            document.write(` ${i}K`)
+        }
+        document.write("<br>")
+
+        document.write("<br>")
+
+        document.write("<h3>Find Smallest and largest value in an Array</h3><br>")
+
+
+        var array = [24, 53, 78, 91, 12];
+        var smallest = array[0];
+        for (var i = 0; i < array.length; i++) {
+            if (smallest > array[i]) {
+                smallest = array[i];
+            }
+        }
+        document.write(array + "<br>")
+        document.write(`Smallest:${smallest}`)
+
+        document.write("<br>")
+        var array = [24, 53, 78, 91, 12];
+        var largest = array[0];
+        for (var i = 0; i < array.length; i++) {
+            if (largest < array[i]) {
+                largest = array[i];
+            }
+        }
+        document.write(array + "<br>")
+        document.write(`Largest: ${largest}`)
+        document.write("<br>")
+
+
+        document.write("<h3>Print Multiples of 5 ranging 1 to 100")
+
+        document.write("<h4>Even</h4><br>")
+        for (var i = 0; i <= 100; i += 5) {
+            document.write(` ${i} &nbsp`);
+        }
+        document.write("<br>");
+        document.write("<h4>Find elements inside an array</h4><br>");
+
+        // var bakery = ["Cake", "Apple pie", "Cookie", "Chips", "Patties"];
+        // var findItems = prompt("Welocme to bakery, What do you want to order?");
+
+
+        function bakeryItems() {
+            var bakery = ["Cake", "Apple pie", "Cookie", "Chips", "Patties", "Cheese puff"];
+            var findItems = prompt("Welocme to bakery, What do you want to order?");
+
+            if (bakery.indexOf(findItems) !== -1) {
+                alert(findItems + " This item exist");
+            } else {
+                alert(findItems + " This item is not existed!");
+            }
+        }
+        bakeryItems();
+
+
+
+    </script>
+</body>
+
+</html>
